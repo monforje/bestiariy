@@ -87,12 +87,19 @@
   border: 2px solid #d0d0d0;
 }
 
+.card-1_image,
+.card-2_image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
 .card-1_image img,
 .card-2_image img {
-  width: 60%;
-  margin: 0 auto;
   display: block;
-  border-radius: 20px;
+  width: 100%;
+  /* height: 160px; */
+  /* object-fit: cover; */
+  object-position: top;
 }
 
 .card-1 p,
@@ -176,10 +183,10 @@
   border-radius: 5px;
 }
 .footer {
-    margin-top: 32px;
-    padding: 14px 16px;
-    border-top: 3px double #767676;
-    font-size: 13px;
-    color: #555;
-    text-align: center;
+  margin-top: 32px;
+  padding: 14px 16px;
+  border-top: 3px double #767676;
+  font-size: 13px;
+  color: #555;
+  text-align: center;
 }
