@@ -175,3 +175,11 @@
   padding: 4px 12px;
   border-radius: 5px;
 }
+.footer {
+    margin-top: 32px;
+    padding: 14px 16px;
+    border-top: 3px double #767676;
+    font-size: 13px;
+    color: #555;
+    text-align: center;
+}
