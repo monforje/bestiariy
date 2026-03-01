@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список существ — Славянский Бестиарий</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="main.html">Самые популярные существа</a><br>
+        <b><a href="data.html">Список самых популярных существ</a></b>
+    </nav>
+
+    <hr>
+
+    <details>
+        <summary>График</summary>
+
+        <form action="#" method="get">
+            <legend>
+                <p><b>Значение по оси OX</b></p>
+            </legend>
+            <label><input type="radio" name="ox" value="classification"> Классификация</label><br>
+            <label><input type="radio" name="ox" value="habitat"> Место обитания</label><br>
+            <label><input type="radio" name="ox" value="height"> Рост</label>
+
+            <legend>
+                <p><b>Значение по оси OY</b></p>
+            </legend>
+            <label><input type="checkbox" name="oy" value="max_danger"> Максимальный уровень опасности</label><br>
+            <label><input type="checkbox" name="oy" value="min_danger"> Минимальный уровень опасности</label><br>
+            <label><input type="checkbox" name="oy" value="avg_danger"> Средний уровень опасности</label>
+
+            <p><input type="submit" value="Построить"></p>
+            <p><i>Здесь будет график</i></p>
+        </form>
+    </details>
+
+    <hr>
+
+    <details>
+        <summary>Фильтр</summary>
+
+        <form action="#" method="get">
+            <p>
+                <label for="f_name">Имя:</label>
+                <input type="text" id="f_name" name="name" size="30">
+            </p>
+            <p>
+                <label for="f_class">Классификация:</label>
+                <input type="text" id="f_class" name="classification" size="30">
+            </p>
+            <p>
+                <label for="f_habitat">Место обитания:</label>
+                <input type="text" id="f_habitat" name="habitat" size="30">
+            </p>
+            <p>
+                <label for="f_height_from">Рост от:</label>
+                <input type="text" id="f_height_from" name="height_from" size="8">
+                &nbsp;до&nbsp;
+                <input type="text" id="f_height_to" name="height_to" size="8">
+            </p>
+            <p>
+                <label for="f_danger_from">Уровень опасности от:</label>
+                <input type="text" id="f_danger_from" name="danger_from" size="8">
+                &nbsp;до&nbsp;
+                <input type="text" id="f_danger_to" name="danger_to" size="8">
+            </p>
+            <p><input type="submit" value="Найти"></p>
+        </form>
+    </details>
+
+    <hr>
+
+    <details>
+        <summary>Сортировка</summary>
+
+        <form action="#" method="get">
+            <p>
+                Первый уровень:&nbsp;
+                <select name="sort1">
+                    <option value="">Нет</option>
+                    <option value="name">Имя</option>
+                    <option value="classification">Классификация</option>
+                    <option value="habitat">Место обитания</option>
+                    <option value="height">Рост</option>
+                    <option value="danger">Уровень опасности</option>
+                </select>
+                &nbsp;по убыванию?&nbsp;
+                <input type="checkbox" name="sort1_desc" value="1">
+            </p>
+            <p>
+                Второй уровень:&nbsp;
+                <select name="sort2">
+                    <option value="">Нет</option>
+                    <option value="name">Имя</option>
+                    <option value="classification">Классификация</option>
+                    <option value="habitat">Место обитания</option>
+                    <option value="height">Рост</option>
+                    <option value="danger">Уровень опасности</option>
+                </select>
+                &nbsp;по убыванию?&nbsp;
+                <input type="checkbox" name="sort2_desc" value="1">
+            </p>
+            <p>
+                Третий уровень:&nbsp;
+                <select name="sort3">
+                    <option value="">Нет</option>
+                    <option value="name">Имя</option>
+                    <option value="classification">Классификация</option>
+                    <option value="habitat">Место обитания</option>
+                    <option value="height">Рост</option>
+                    <option value="danger">Уровень опасности</option>
+                </select>
+                &nbsp;по убыванию?&nbsp;
+                <input type="checkbox" name="sort3_desc" value="1">
+            </p>
+            <p><input type="submit" value="Сортировать"></p>
+        </form>
+    </details>
+
+    <hr>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Классификация</th>
+                <th>Место обитания</th>
+                <th>Рост, м</th>
+                <th>Уровень опасности</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Алконост</td>
+                <td>Сакральные персонажи</td>
+                <td>Воздух</td>
+                <td>1.5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Баба-яга</td>
+                <td>Сказочные персонажи</td>
+                <td>Лес</td>
+                <td>1.6</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Баламут</td>
+                <td>Нечистая сила</td>
+                <td>Деревня</td>
+                <td>1.7</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Банник</td>
+                <td>Духи дома</td>
+                <td>Баня</td>
+                <td>0.4</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Берегиня</td>
+                <td>Природные духи</td>
+                <td>Водоём</td>
+                <td>1.7</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Блуждающий огонь</td>
+                <td>Природные духи</td>
+                <td>Болото</td>
+                <td>0.1</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Болотник</td>
+                <td>Природные духи</td>
+                <td>Болото</td>
+                <td>2.0</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Ведьма</td>
+                <td>Сакральные персонажи</td>
+                <td>Деревня</td>
+                <td>1.7</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Ветрогон</td>
+                <td>Природные духи</td>
+                <td>Воздух</td>
+                <td>1.0</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Вий</td>
+                <td>Демонические существа</td>
+                <td>Подземный мир</td>
+                <td>3.0</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Вила</td>
+                <td>Природные духи</td>
+                <td>Лес / воздух</td>
+                <td>1.7</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Волколак</td>
+                <td>Нечистая сила</td>
+                <td>Лес</td>
+                <td>1.9</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>Волот</td>
+                <td>Сказочные персонажи</td>
+                <td>Горы</td>
+                <td>5.0</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Гамаюн</td>
+                <td>Сакральные персонажи</td>
+                <td>Воздух</td>
+                <td>1.4</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Глум</td>
+                <td>Нечистая сила</td>
+                <td>Дом</td>
+                <td>0.3</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Горыня</td>
+                <td>Сказочные персонажи</td>
+                <td>Горы</td>
+                <td>6.0</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Дива</td>
+                <td>Природные духи</td>
+                <td>Лес</td>
+                <td>1.8</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Дикий охотник</td>
+                <td>Сакральные персонажи</td>
+                <td>Лес</td>
+                <td>2.0</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Домовой</td>
+                <td>Духи дома</td>
+                <td>Дом</td>
+                <td>0.3</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Дворовой</td>
+                <td>Духи дома</td>
+                <td>Двор</td>
+                <td>0.4</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Жар-птица</td>
+                <td>Природные духи</td>
+                <td>Воздух</td>
+                <td>0.8</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Жмора</td>
+                <td>Нечистая сила</td>
+                <td>Дом</td>
+                <td>0.4</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Змей Горыныч</td>
+                <td>Сказочные персонажи</td>
+                <td>Горы</td>
+                <td>10.0</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Змей Полоз</td>
+                <td>Природные духи</td>
+                <td>Горы</td>
+                <td>8.0</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Зюзя</td>
+                <td>Сакральные персонажи</td>
+                <td>Зима / поле</td>
+                <td>2.0</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Карачун</td>
+                <td>Сакральные персонажи</td>
+                <td>Подземный мир</td>
+                <td>2.5</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>Кикимора</td>
+                <td>Духи дома</td>
+                <td>Болото / дом</td>
+                <td>0.5</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Коловертыш</td>
+                <td>Нечистая сила</td>
+                <td>Лес</td>
+                <td>0.3</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Коровья смерть</td>
+                <td>Нечистая сила</td>
+                <td>Деревня</td>
+                <td>1.6</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>Кот Баюн</td>
+                <td>Сказочные персонажи</td>
+                <td>Лес</td>
+                <td>0.9</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Кощей Бессмертный</td>
+                <td>Сказочные персонажи</td>
+                <td>Замок</td>
+                <td>2.0</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Кудесник</td>
+                <td>Сакральные персонажи</td>
+                <td>Деревня</td>
+                <td>1.8</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Леший</td>
+                <td>Природные духи</td>
+                <td>Лес</td>
+                <td>2.5</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Лесной царь</td>
+                <td>Природные духи</td>
+                <td>Лес</td>
+                <td>3.0</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Лихо одноглазое</td>
+                <td>Демонические существа</td>
+                <td>Лес</td>
+                <td>1.8</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Мавка</td>
+                <td>Природные духи</td>
+                <td>Водоём</td>
+                <td>1.6</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Марена</td>
+                <td>Сакральные персонажи</td>
+                <td>Подземный мир</td>
+                <td>1.8</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Морозко</td>
+                <td>Сакральные персонажи</td>
+                <td>Зима / лес</td>
+                <td>2.0</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Морской царь</td>
+                <td>Природные духи</td>
+                <td>Море</td>
+                <td>3.0</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Навь</td>
+                <td>Нечистая сила</td>
+                <td>Кладбище</td>
+                <td>1.7</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>Оборотень</td>
+                <td>Нечистая сила</td>
+                <td>Лес</td>
+                <td>1.9</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Огненный змей</td>
+                <td>Демонические существа</td>
+                <td>Воздух</td>
+                <td>5.0</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>Огневица</td>
+                <td>Природные духи</td>
+                <td>Воздух</td>
+                <td>1.5</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Персть</td>
+                <td>Природные духи</td>
+                <td>Поле</td>
+                <td>1.5</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Полевик</td>
+                <td>Природные духи</td>
+                <td>Поле</td>
+                <td>0.8</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Полудница</td>
+                <td>Природные духи</td>
+                <td>Поле</td>
+                <td>1.7</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Порченый</td>
+                <td>Нечистая сила</td>
+                <td>Деревня</td>
+                <td>1.7</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Пущевик</td>
+                <td>Природные духи</td>
+                <td>Лес</td>
+                <td>1.5</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Русалка</td>
+                <td>Природные духи</td>
+                <td>Водоём</td>
+                <td>1.6</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>Сирин</td>
+                <td>Сакральные персонажи</td>
+                <td>Воздух</td>
+                <td>1.5</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>Стрибог</td>
+                <td>Сакральные персонажи</td>
+                <td>Воздух</td>
+                <td>2.5</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Упырь</td>
+                <td>Нечистая сила</td>
+                <td>Кладбище</td>
+                <td>1.8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>Чур</td>
+                <td>Духи предков</td>
+                <td>Дом</td>
+                <td>1.5</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Шишига</td>
+                <td>Нечистая сила</td>
+                <td>Болото</td>
+                <td>0.6</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Анчутка</td>
+                <td>Нечистая сила</td>
+                <td>Болото / дом</td>
+                <td>0.2</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>Дрёма</td>
+                <td>Духи дома</td>
+                <td>Дом</td>
+                <td>0.5</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Лесавка</td>
+                <td>Природные духи</td>
+                <td>Лес</td>
+                <td>0.5</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Злыдни</td>
+                <td>Нечистая сила</td>
+                <td>Дом</td>
+                <td>0.3</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>...</p>
+
+    <hr>
+
+    <footer>
+        <p>Группа: ВП-12 &nbsp;|&nbsp; Разработчик: Семак Д.А.</p>
+    </footer>
+
+</body>
+
+</html>
