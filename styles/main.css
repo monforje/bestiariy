@@ -1,0 +1,177 @@
+.menu {
+  border-bottom: 3px double #767676;
+  border-top: 3px double #767676;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.logo {
+  margin-left: 16px;
+  margin-right: auto;
+  font-size: 15px;
+  font-weight: bold;
+  color: #1ea500;
+}
+
+.menu nav {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+
+.menu nav a {
+  display: flex;
+  color: #000000;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.menu nav a.active {
+  color: #1ea500;
+  border-right: 3px double #767676;
+  border-left: 3px double #767676;
+}
+
+.gallery {
+  font-size: 0;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.gallery-column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.gallery-column--left {
+  width: 66%;
+}
+
+.gallery-column--right {
+  width: 34%;
+}
+
+.gallery-column img {
+  display: block;
+  width: 100%;
+}
+
+.content-wrapper {
+  font-size: 0;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.cards {
+  display: inline-block;
+  vertical-align: top;
+  width: 65%;
+  font-size: 0;
+  padding: 16px 0;
+  box-sizing: border-box;
+}
+
+.card-1,
+.card-2 {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  margin: 1%;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border: 2px solid #d0d0d0;
+}
+
+.card-1_image img,
+.card-2_image img {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 20px;
+}
+
+.card-1 p,
+.card-2 p {
+  margin: 0 0 12px;
+  color: #333;
+}
+
+.card-1_text,
+.card-2_text {
+  font-size: 14px;
+  text-align: justify;
+}
+
+.card-1_text strong,
+.card-2_text strong {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.card-1_etc,
+.card-2_etc {
+  margin-top: 12px;
+}
+
+.card-2_etc {
+  text-align: right;
+}
+
+.sidebar {
+  display: inline-block;
+  vertical-align: top;
+  width: 32%;
+  padding: 55px 8px 16px;
+  box-sizing: border-box;
+  border-left: 2px solid #aaa;
+}
+
+.sidebar-item {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  font-size: 0;
+}
+
+.sidebar-item_text {
+  display: inline-block;
+  vertical-align: middle;
+  width: 58%;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 8px;
+  box-sizing: border-box;
+}
+
+.sidebar-item_text strong {
+  display: block;
+  font-size: 18px;
+}
+
+.sidebar-item_image {
+  display: inline-block;
+  vertical-align: middle;
+  width: 42%;
+  box-sizing: border-box;
+}
+
+.sidebar-item_image img {
+  display: block;
+  border-radius: 8px;
+}
+
+.sidebar-btn {
+  display: inline-block;
+  background-color: #2196f3;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 5px;
+}
