@@ -1,17 +1,13 @@
 .menu {
-  border-bottom: 3px double #767676;
-  border-top: 3px double #767676;
+  border-bottom: thick double #767676;
+  border-top: thick double #767676;
   height: 50px;
-  line-height: 50px;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .menu p {
   display: inline-block;
-  vertical-align: middle;
-  margin-left: 16px;
-  line-height: normal;
+  vertical-align: baseline;
+  margin-left: 1em;
   font-size: 15px;
   font-weight: bold;
   color: #1ea500;
@@ -36,8 +32,8 @@
 
 .menu nav a.active {
   color: #1ea500;
-  border-right: 3px double #767676;
-  border-left: 3px double #767676;
+  border-right: thick double #767676;
+  border-left: thick double #767676;
 }
 
 .gallery {
