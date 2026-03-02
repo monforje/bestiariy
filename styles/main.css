@@ -1,12 +1,11 @@
 .menu {
-  border-bottom: thick double #767676;
   border-top: thick double #767676;
+  border-bottom: thick double #767676;
   height: 50px;
 }
 
 .menu p {
   display: inline-block;
-  vertical-align: baseline;
   margin-left: 1em;
   font-size: 15px;
   font-weight: bold;
@@ -16,35 +15,34 @@
 .menu nav {
   float: right;
   font-size: 0;
-  height: 100%;
 }
 
 .menu nav a {
   display: inline-block;
-  vertical-align: middle;
-  color: #000000;
-  text-decoration: none;
-  padding: 0 10px;
-  height: 100%;
+  height: 50px;
   line-height: 50px;
+  padding: 0 10px;
   font-size: 14px;
+  text-decoration: none;
+  color: #000;
 }
 
 .menu nav a.active {
   color: #1ea500;
-  border-right: thick double #767676;
   border-left: thick double #767676;
+  border-right: thick double #767676;
 }
 
 .gallery {
-  font-size: 0;
-  width: 100%;
+  width: 90%;
+  margin: auto;
   margin-top: 16px;
+  font-size: 0;
 }
 
 .gallery-column {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .gallery-column--left {
@@ -58,12 +56,35 @@
 .gallery-column img {
   display: block;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gallery-image-1 {
+  height: 180px;
+}
+
+.gallery-image-2 {
+  height: 150px;
+}
+
+.gallery-image-3 {
+  height: 90px;
+}
+
+.gallery-image-4 {
+  height: 150px;
+}
+
+.gallery-image-5 {
+  height: 90px;
 }
 
 .content {
+  width: 90%;
+  margin: 24px auto 0;
   font-size: 0;
-  width: 100%;
-  margin-top: 24px;
+  overflow: hidden;
 }
 
 .cards {
@@ -74,25 +95,22 @@
 .card {
   display: inline-block;
   vertical-align: top;
-  width: 48%;
+  width: 46%;
   margin: 1%;
   padding: 16px;
-  border-radius: 16px;
-  font-size: 14px;
-  box-sizing: border-box;
   border: 2px solid #d0d0d0;
-}
-
-.card_image {
-  border-radius: 20px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  font-size: 14px;
+  min-height: 380px;
 }
 
 .card_image img {
   width: 100%;
-  /* Раскоментить */
   height: 160px;
   object-fit: cover;
   object-position: top;
+  border-radius: 20px;
 }
 
 .card p {
@@ -102,15 +120,14 @@
 
 .card_text {
   padding-top: 10px;
-  font-size: 14px;
   text-align: justify;
 }
 
 .card_text strong {
   display: block;
+  margin-bottom: 8px;
   font-size: 18px;
   text-align: center;
-  margin-bottom: 8px;
 }
 
 .card_etc_left,
@@ -129,22 +146,32 @@
 
 .sidebar {
   display: inline-block;
-  vertical-align: top;
   width: 32%;
-  padding: 40px 8px 16px;
+  padding: 40px 8px 9999px;
+  margin-bottom: -9999px;
   border-left: 2px solid #aaa;
+  vertical-align: top;
+  box-sizing: border-box;
 }
 
 .sidebar-item {
   margin-bottom: 20px;
 }
 
-.sidebar-item_text {
+.sidebar-item_text,
+.sidebar-item_image {
   display: inline-block;
   vertical-align: middle;
+}
+
+.sidebar-item_text {
   width: 58%;
   font-size: 14px;
   text-align: right;
+}
+
+.sidebar-item_text p {
+  text-align: justify;
 }
 
 .sidebar-item_text strong {
@@ -152,24 +179,25 @@
 }
 
 .sidebar-item_image {
-  display: inline-block;
-  vertical-align: middle;
   width: 42%;
 }
 
 .sidebar-item_image img {
   border-radius: 8px;
+  width: 100%;
 }
 
 .sidebar-btn {
-  display: inline-block;
+  display: block;
+  padding: 4px 12px;
+  font-size: 13px;
+  text-decoration: none;
   background-color: #2196f3;
   color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  padding: 4px 12px;
   border-radius: 5px;
-  border: 1px solid #000000;
+  border: 1px solid #000;
+  width: fit-content;
+  margin-left: auto;
 }
 
 .footer {
