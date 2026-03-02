@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css"
-      rel="stylesheet"
-    />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../js/bootstrap.bundle.min.js"></script>
     <title>Славянский Бестиарий</title>
     <style>
       .double-border-y {
@@ -42,6 +40,20 @@
       }
       .detail-link:hover {
         text-decoration: underline;
+      }
+      /* MDB-compatible classes not present in Bootstrap 5 */
+      .bg-image {
+        position: relative;
+        overflow: hidden;
+      }
+      .hover-zoom img {
+        transition: transform 0.3s ease;
+      }
+      .hover-zoom:hover img {
+        transform: scale(1.05);
+      }
+      .text-justify {
+        text-align: justify;
       }
     </style>
   </head>
@@ -339,7 +351,5 @@
     >
       2026 Б9123-09.03.04/1 Комаров Д.И.
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
   </body>
 </html>
