@@ -1,0 +1,48 @@
+.double-border-y {
+  border-top: thick double #767676;
+  border-bottom: thick double #767676;
+}
+.double-border-top {
+  border-top: thick double #767676;
+}
+.nav-link.active {
+  color: #1ea500 !important;
+  border-left: thick double #767676;
+  border-right: thick double #767676;
+}
+.nav-link:not(.active) {
+  color: #000 !important;
+}
+.brand-logo {
+  color: #1ea500 !important;
+  font-weight: bold;
+}
+.card-img-cover {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px;
+}
+.detail-link {
+  color: brown;
+  text-decoration: none;
+  font-size: 14px;
+}
+.detail-link:hover {
+  text-decoration: underline;
+}
+/* MDB-compatible classes not present in Bootstrap 5 */
+.bg-image {
+  position: relative;
+  overflow: hidden;
+}
+.hover-zoom img {
+  transition: transform 0.3s ease;
+}
+.hover-zoom:hover img {
+  transform: scale(1.05);
+}
+.text-justify {
+  text-align: justify;
+}
