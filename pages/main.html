@@ -9,101 +9,75 @@
   </head>
 
   <body>
-    <nav class="navbar double-border-y py-0" style="min-height: 50px">
+    <nav class="navbar navbar-expand-lg border-top border-bottom border-2 py-0">
       <div class="container-fluid px-3">
-        <span class="navbar-brand brand-logo mb-0">Лого / слоган</span>
-        <div class="d-flex flex-wrap">
-          <a
-            href="main.html"
-            class="nav-link active px-3 d-flex align-items-center"
-            style="height: 50px"
-            >Самые популярные существа</a
-          >
-          <a
-            href="data.html"
-            class="nav-link px-3 d-flex align-items-center"
-            style="height: 50px"
-            >Список самых популярных существ</a
-          >
-          <a
-            href="main.html"
-            class="nav-link px-3 d-flex align-items-center"
-            style="height: 50px"
-            >Меню 3</a
-          >
-          <a
-            href="main.html"
-            class="nav-link px-3 d-flex align-items-center"
-            style="height: 50px"
-            >Меню 4</a
-          >
+        <span class="navbar-brand mb-0">Лого / слоган</span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <div class="navbar-nav ms-auto">
+            <a href="main.html" class="nav-link active px-3"
+              >Самые популярные существа</a
+            >
+            <a href="data.html" class="nav-link px-3"
+              >Список самых популярных существ</a
+            >
+            <a href="main.html" class="nav-link px-3">Меню 3</a>
+            <a href="main.html" class="nav-link px-3">Меню 4</a>
+          </div>
         </div>
       </div>
     </nav>
 
-    <div class="container-fluid px-5 mt-3" style="max-width: 95%">
+    <div class="container-fluid px-5 mt-3">
       <div class="row g-0">
-        <div class="col-12 col-lg-8">
-          <div class="bg-image hover-zoom">
-            <img
-              src="../images/1BIG.jpg"
-              class="w-100"
-              style="height: 180px; object-fit: cover; object-position: center"
-            />
+        <div class="col-12 col-lg-8 d-flex flex-column">
+          <div class="flex-grow-1 overflow-hidden">
+            <img src="../images/1BIG.jpg" class="gallery-img" />
           </div>
-          <div class="bg-image hover-zoom">
-            <img
-              src="../images/2BIG.jpg"
-              class="w-100"
-              style="height: 150px; object-fit: cover; object-position: center"
-            />
+          <div class="flex-grow-1 overflow-hidden">
+            <img src="../images/2BIG.jpg" class="new-size" />
           </div>
         </div>
 
-        <div class="col-12 col-lg-4">
-          <div class="bg-image hover-zoom">
-            <img
-              src="../images/3BIG.jpg"
-              class="w-100"
-              style="height: 90px; object-fit: cover; object-position: center"
-            />
+        <div class="col-12 col-lg-4 d-flex flex-column">
+          <div class="flex-grow-1 overflow-hidden">
+            <img src="../images/3BIG.jpg" class="gallery-img" />
           </div>
-          <div class="bg-image hover-zoom">
-            <img
-              src="../images/4BIG.jpg"
-              class="w-100"
-              style="height: 150px; object-fit: cover; object-position: center"
-            />
+          <div class="flex-grow-1 overflow-hidden">
+            <img src="../images/4BIG.jpg" class="gallery-img" />
           </div>
-          <div class="bg-image hover-zoom">
-            <img
-              src="../images/5BIG.jpg"
-              class="w-100"
-              style="height: 90px; object-fit: cover; object-position: center"
-            />
+          <div class="flex-grow-1 overflow-hidden">
+            <img src="../images/5BIG.jpg" class="gallery-img" />
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid px-5 mt-4" style="max-width: 95%">
+    <div class="container-fluid px-5 mt-4">
       <div class="row">
         <div class="col-12 col-lg-8">
           <div class="row g-2">
             <div class="col-12 col-md-6">
-              <div
-                class="card h-100 border rounded-4 p-3"
-                style="min-height: 380px"
-              >
-                <div class="bg-image rounded-4 mb-2">
-                  <img src="../images/alconost.png" class="card-img-cover" />
+              <div class="card h-100 border rounded-4 p-3">
+                <div class="ratio ratio-4x3 rounded-4 mb-2 overflow-hidden">
+                  <img
+                    src="../images/alconost.png"
+                    class="object-fit-cover w-100"
+                  />
                 </div>
                 <div class="card-body p-0 d-flex flex-column">
                   <h6 class="fw-bold text-center fs-5 mb-2">Алконост</h6>
-                  <p
-                    class="text-justify small text-secondary flex-grow-1"
-                    style="text-align: justify"
-                  >
+                  <p class="small text-secondary flex-grow-1">
                     На голове алконоста обычно изображается корона. Это существо
                     имеет женскую грудь, в одной или обеих руках алконост держит
                     райский цветок или развернутый свиток с изречением о
@@ -116,22 +90,18 @@
                     которая радуется и смеется. Птица смахивает с крыльев живую
                     росу, и преображаются древа.
                   </p>
-                  <a href="main.html" class="detail-link mt-2">Подробнее...</a>
+                  <a href="main.html" class="btn btn-link p-0 mt-2 text-start"
+                    >Подробнее...</a
+                  >
                 </div>
               </div>
             </div>
 
             <div class="col-12 col-md-6">
-              <div
-                class="card h-100 border rounded-4 p-3"
-                style="min-height: 380px"
-              >
+              <div class="card h-100 border rounded-4 p-3">
                 <div class="card-body p-0 d-flex flex-column">
                   <h6 class="fw-bold text-center fs-5 mb-2">Баба-яга</h6>
-                  <p
-                    class="small text-secondary flex-grow-1"
-                    style="text-align: justify"
-                  >
+                  <p class="small text-secondary flex-grow-1">
                     Баба-яга — сложный сказочный персонаж. В некоторых сказках
                     Баба-яга обладает определенными устойчивыми атрибутами: она
                     колдует, летает в ступе, живёт в дремучем лесу в избушке на
@@ -143,14 +113,16 @@
                     иному и миру человеческому.
                   </p>
                   <a href="baba-yaga.html">
-                    <div class="bg-image rounded-4 mb-2">
+                    <div class="ratio ratio-4x3 rounded-4 mb-2 overflow-hidden">
                       <img
                         src="../images/baba-yaga.png"
-                        class="card-img-cover"
+                        class="object-fit-cover w-100"
                       />
                     </div>
                   </a>
-                  <a href="baba-yaga.html" class="detail-link text-end mt-1"
+                  <a
+                    href="baba-yaga.html"
+                    class="btn btn-link p-0 text-end mt-1"
                     >Подробнее...</a
                   >
                 </div>
@@ -158,19 +130,16 @@
             </div>
 
             <div class="col-12 col-md-6">
-              <div
-                class="card h-100 border rounded-4 p-3"
-                style="min-height: 380px"
-              >
-                <div class="bg-image rounded-4 mb-2">
-                  <img src="../images/witch.png" class="card-img-cover" />
+              <div class="card h-100 border rounded-4 p-3">
+                <div class="ratio ratio-4x3 rounded-4 mb-2 overflow-hidden">
+                  <img
+                    src="../images/witch.png"
+                    class="object-fit-cover w-100"
+                  />
                 </div>
                 <div class="card-body p-0 d-flex flex-column">
                   <h6 class="fw-bold text-center fs-5 mb-2">Ведьма</h6>
-                  <p
-                    class="small text-secondary flex-grow-1"
-                    style="text-align: justify"
-                  >
+                  <p class="small text-secondary flex-grow-1">
                     Ведьма – от слова «ведать», «знать». Ведала травы, обереги,
                     могла наслать порчу или помочь ее снять. Ведьма занималась в
                     своей деревне целительством, ворожила, предсказывала
@@ -180,22 +149,18 @@
                     было и другим способом. К примеру, если в семье рождалось
                     семь девочек подряд, то седьмая считалась ведьмой.
                   </p>
-                  <a href="main.html" class="detail-link mt-2">Подробнее...</a>
+                  <a href="main.html" class="btn btn-link p-0 mt-2 text-start"
+                    >Подробнее...</a
+                  >
                 </div>
               </div>
             </div>
 
             <div class="col-12 col-md-6">
-              <div
-                class="card h-100 border rounded-4 p-3"
-                style="min-height: 380px"
-              >
+              <div class="card h-100 border rounded-4 p-3">
                 <div class="card-body p-0 d-flex flex-column">
                   <h6 class="fw-bold text-center fs-5 mb-2">Жар-птица</h6>
-                  <p
-                    class="small text-secondary flex-grow-1"
-                    style="text-align: justify"
-                  >
+                  <p class="small text-secondary flex-grow-1">
                     Жар-птица — сказочная птица со сверкающими глазами и
                     золотистыми огненными крыльями. Она излучает свет, который
                     даже в ночное время сияет, словно тысячи огней. Когда
@@ -206,10 +171,13 @@
                     весной возрождается. Считается, что Жар-птица — аналог
                     феникса, символ бессмертного огня.
                   </p>
-                  <div class="bg-image rounded-4 mb-2">
-                    <img src="../images/firebird.png" class="card-img-cover" />
+                  <div class="ratio ratio-4x3 rounded-4 mb-2 overflow-hidden">
+                    <img
+                      src="../images/firebird.png"
+                      class="object-fit-cover w-100"
+                    />
                   </div>
-                  <a href="main.html" class="detail-link text-end mt-1"
+                  <a href="main.html" class="btn btn-link p-0 text-end mt-1"
                     >Подробнее...</a
                   >
                 </div>
@@ -222,7 +190,7 @@
             <div class="row align-items-center">
               <div class="col-7 text-end">
                 <strong class="fs-5">Кот-Баюн</strong>
-                <p class="small mt-1" style="text-align: justify">
+                <p class="small mt-1">
                   Кот Баюн — огромный кот-людоед, обладающий волшебным голосом.
                   Своими рассказами и пением он заговаривает и усыпляет
                   путников. Тех, у кого не хватает сил противостоять его
@@ -231,8 +199,7 @@
                 </p>
                 <a
                   href="main.html"
-                  class="btn btn-primary btn-sm ms-auto d-block"
-                  style="width: fit-content; margin-left: auto"
+                  class="btn btn-primary btn-sm ms-auto d-block w-auto"
                   >Подробнее...</a
                 >
               </div>
@@ -246,7 +213,7 @@
             <div class="row align-items-center">
               <div class="col-7 text-end">
                 <strong class="fs-5">Русалка</strong>
-                <p class="small mt-1" style="text-align: justify">
+                <p class="small mt-1">
                   Русалка — персонаж восточнославянский, обычно появляющийся на
                   земле во время Русальной недели и связанный в народном
                   сознании с дождями, туманами, цветением, плодородием и культом
@@ -255,8 +222,7 @@
                 </p>
                 <a
                   href="main.html"
-                  class="btn btn-primary btn-sm ms-auto d-block"
-                  style="width: fit-content; margin-left: auto"
+                  class="btn btn-primary btn-sm ms-auto d-block w-auto"
                   >Подробнее...</a
                 >
               </div>
@@ -270,7 +236,7 @@
             <div class="row align-items-center">
               <div class="col-7 text-end">
                 <strong class="fs-5">Леший</strong>
-                <p class="small mt-1" style="text-align: justify">
+                <p class="small mt-1">
                   Леший — хозяин леса, покровитель лесных зверей и птиц. С виду
                   похож на мужика или старика с белой бородой, одетого в обычную
                   крестьянскую одежду, но некоторые детали внешности выдают его
@@ -281,8 +247,7 @@
                 </p>
                 <a
                   href="main.html"
-                  class="btn btn-primary btn-sm ms-auto d-block"
-                  style="width: fit-content; margin-left: auto"
+                  class="btn btn-primary btn-sm ms-auto d-block w-auto"
                   >Подробнее...</a
                 >
               </div>
@@ -295,10 +260,7 @@
       </div>
     </div>
 
-    <footer
-      class="double-border-top mt-4 py-3 text-center text-muted"
-      style="font-size: 13px"
-    >
+    <footer class="border-top border-2 mt-4 py-3 text-center text-muted small">
       2026 Б9123-09.03.04/1 Комаров Д.И.
     </footer>
   </body>
