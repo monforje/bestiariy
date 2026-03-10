@@ -1,0 +1,17 @@
+extends ./template.pug
+block vars
+  - var currentPage = 'baba-yaga.html'
+
+block pageTitle
+  title= siteTitle
+
+block content
+  +gallery(galleryImages)
+  .content
+    .content__left
+      +topCreature(topCreature)
+      +bottomCreature(bottomCreature)
+    .content__right
+      each creature in sidebarCreatures
+        +sidebarItem(creature)
+

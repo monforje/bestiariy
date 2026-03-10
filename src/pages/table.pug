@@ -1,0 +1,71 @@
+extends ./template.pug
+block vars
+  - var currentPage = 'table.html'
+
+
+block pageTitle
+    title Список существ — #{siteTitle}
+
+block content
+    .table-page
+        details.table-filter
+            summary Фильтр
+            form.table-filter__form(action='#' method='get')
+                p
+                    label(for='f_name') Имя:
+                    input#f_name.table-filter__input(type='text' name='name' size='30')
+                p
+                    label(for='f_class') Классификация:
+                    input#f_class.table-filter__input(type='text' name='classification' size='30')
+                p
+                    label(for='f_habitat') Место обитания:
+                    input#f_habitat.table-filter__input(type='text' name='habitat' size='30')
+                p
+                    label(for='f_height_from') Рост от:
+                    input#f_height_from.table-filter__input(type='text' name='height_from' size='8')
+                    |  до 
+                    input#f_height_to.table-filter__input(type='text' name='height_to' size='8')
+                p
+                    label(for='f_danger_from') Уровень опасности от:
+                    input#f_danger_from.table-filter__input(type='text' name='danger_from' size='8')
+                    |  до 
+                    input#f_danger_to.table-filter__input(type='text' name='danger_to' size='8')
+                p
+                    input.table-filter__submit(type='submit' value='Найти')
+
+        details.table-sort
+            summary Сортировка
+            form.table-sort__form(action='#' method='get')
+                - const sortLevels = ['Первый', 'Второй', 'Третий']
+                - const sortKeys   = ['sort1',  'sort2',  'sort3']
+                each level, i in sortLevels
+                    p
+                        | #{level} уровень: 
+                        select(name=sortKeys[i])
+                            option(value='') Нет
+                            option(value='name') Имя
+                            option(value='classification') Классификация
+                            option(value='habitat') Место обитания
+                            option(value='height') Рост
+                            option(value='danger') Уровень опасности
+                        |  по убыванию? 
+                        input(type='checkbox', name=sortKeys[i] + '_desc' value='1')
+                p
+                    input.table-sort__submit(type='submit' value='Сортировать')
+
+        table.creatures-table(border='1' cellpadding='5' cellspacing='0')
+            thead
+                tr
+                    th Имя
+                    th Классификация
+                    th Место обитания
+                    th Рост, м
+                    th Уровень опасности
+            tbody
+                each c in creatures
+                    tr
+                        td= c.name
+                        td= c.classification
+                        td= c.habitat
+                        td= c.height
+                        td= c.danger

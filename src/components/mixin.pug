@@ -1,0 +1,56 @@
+//- ====== HEADER ======
+mixin header(links, activePage)
+  header.header
+    nav.header__nav
+      each link in links
+        a.header__nav-link(
+          href=link.href,
+          class=(link.href === activePage ? 'header__nav-link--active' : '')
+        )= link.text
+    .header__logo
+      p= logoText
+
+//- ====== FOOTER ======
+mixin footer()
+  footer.footer
+    p Группа: #{group} | Разработчик: #{developer}
+
+//- ====== GALLERY ======
+mixin gallery(images)
+  .gallery
+    .gallery__left
+      img.gallery__img(src=images[0], alt='Фото 1')
+    .gallery__right
+      img.gallery__img(src=images[1], alt='Фото 2')
+      img.gallery__img(src=images[2], alt='Фото 3')
+      .gallery__bottom
+        img.gallery__img(src=images[3], alt='Фото 4')
+        img.gallery__img(src=images[4], alt='Фото 5')
+
+//- ====== TOP CREATURE (главный, с двухколоночным текстом) ======
+mixin topCreature(c)
+  .top-part
+    .top-part__header= c.name
+    .top-part__text
+      p= c.textLeft
+      p= c.textRight
+    a.top-part__link(href=c.link) Подробнее
+    img.top-part__img(src=c.img, alt=c.name)
+
+//- ====== BOTTOM CREATURE (с рамкой, изображение слева) ======
+mixin bottomCreature(c)
+  .bottom-part
+    .bottom-part__header= c.name
+    img.bottom-part__img(src=c.img, alt=c.name)
+    p.bottom-part__text= c.text
+    a.bottom-part__link(href=c.link) Подробнее
+
+//- ====== SIDEBAR ITEM (сайдбар: изображение-круг + текст) ======
+//- Модификатор alt=true: изображение слева, текст справа
+mixin sidebarItem(c)
+  .sidebar-item(class=c.alt ? 'sidebar-item--alt' : '')
+    .sidebar-item__inner
+      .sidebar-item__header= c.name
+      p.sidebar-item__text= c.text
+      a.sidebar-item__link(href=c.link) Подробнее
+      img.sidebar-item__img(src=c.img, alt=c.name)

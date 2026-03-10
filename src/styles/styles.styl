@@ -1,0 +1,403 @@
+// ===== ПЕРЕМЕННЫЕ =====
+$primary        = #42a5f5
+$border-light   = #ddd
+$border-mid     = #ccc
+$border-faint   = #eee
+$bg-footer      = #f5f5f5
+$text-main      = #333
+$text-muted     = #666
+$font-base      = Arial, sans-serif
+$fz-base        = 14px
+$transition-img = transform 0.3s ease, filter 0.3s ease
+
+// ===== СБРОС И БАЗОВЫЕ СТИЛИ =====
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+body
+  font-family: $font-base
+  font-size: $fz-base
+  color: $text-main
+
+img
+  display: block
+  max-width: 100%
+
+a
+  text-decoration: none
+
+// ===== ШАПКА (BEM: .header) =====
+.header
+  &__nav
+    display: flex
+
+    a
+      padding: 10px 18px
+      color: #000
+      font-size: 13px
+
+  &__nav-link--active
+    background-color: $primary
+    color: #fff
+    font-weight: bold
+
+  &__logo
+    background-color: $primary
+    padding: 10px 18px
+    color: #fff
+    font-size: 13px
+
+// ===== ГАЛЕРЕЯ (BEM: .gallery) =====
+.gallery
+  display: grid
+  grid-template-columns: 1fr 2.5fr
+  padding: 8px
+  height: 260px
+
+  &__left
+    overflow: hidden
+
+  &__right
+    display: grid
+    grid-template-rows: 5fr 3fr 4fr
+    overflow: hidden
+
+  &__bottom
+    display: grid
+    grid-template-columns: 1fr 1fr
+    min-height: 0
+    overflow: hidden
+
+  &__img
+    display: block
+    width: 100%
+    height: 100%
+    min-height: 0
+    object-fit: cover
+    transition: $transition-img
+
+    &:hover
+      transform: scale(1.07)
+      filter: brightness(1.15)
+      cursor: pointer
+
+// ===== КОНТЕНТНАЯ ОБЛАСТЬ (BEM: .content) =====
+.content
+  display: grid
+  grid-template-columns: 3fr 1fr
+  padding: 16px 8px
+
+  &__left
+    padding-right: 16px
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+  &__right
+    border-left: 1px solid $border-light
+    padding-left: 12px
+    display: flex
+    flex-direction: column
+    gap: 12px
+
+// ===== ГЛАВНОЕ СУЩЕСТВО — ВЕРХНИЙ БЛОК (BEM: .top-part) =====
+.top-part
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-areas: "header header header" "text text img" ". link img"
+  gap: 8px
+
+  &__header
+    grid-area: header
+    font-weight: bold
+    font-size: 15px
+    text-align: center
+
+  &__text
+    grid-area: text
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 8px
+
+    p
+      line-height: 1.7
+
+  &__link
+    grid-area: link
+    place-self: end
+
+  &__img
+    grid-area: img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+// ===== ГЛАВНОЕ СУЩЕСТВО — НИЖНИЙ БЛОК (BEM: .bottom-part) =====
+.bottom-part
+  border: 1px solid $border-mid
+  padding: 12px
+  display: grid
+  grid-template-columns: 200px 1fr
+  grid-template-areas: "header header" "img text" "img link"
+  gap: 8px
+
+  &__header
+    grid-area: header
+    text-align: center
+    font-weight: bold
+    font-size: 15px
+
+  &__img
+    grid-area: img
+    width: 100%
+    object-fit: cover
+
+  &__text
+    grid-area: text
+    line-height: 1.7
+
+  &__link
+    grid-area: link
+    place-self: end
+
+// ===== ЭЛЕМЕНТ САЙДБАРА (BEM: .sidebar-item) =====
+.sidebar-item
+  padding-bottom: 10px
+  border-bottom: 1px solid $border-faint
+
+  &__inner
+    display: grid
+    gap: 6px
+    align-items: start
+    grid-template-columns: 1fr auto
+    grid-template-areas: "header circle" "text circle" "link circle"
+
+  &--alt
+    .sidebar-item__inner
+      grid-template-columns: auto 1fr
+      grid-template-areas: "circle header" "circle text" "circle link"
+
+  &__header
+    grid-area: header
+    font-weight: bold
+    font-size: 13px
+
+  &__text
+    grid-area: text
+    font-size: 12px
+    line-height: 1.5
+
+  &__link
+    grid-area: link
+    font-size: 12px
+
+  &__img
+    grid-area: circle
+    border-radius: 50%
+    width: 70px
+    height: 70px
+    object-fit: cover
+
+// ===== ПОДВАЛ (BEM: .footer) =====
+.footer
+  background-color: $bg-footer
+  padding: 12px 16px
+  text-align: center
+  font-size: 13px
+  color: $text-muted
+  border-top: 1px solid $border-light
+  margin-top: 16px
+
+// ===== СТРАНИЦА БАБЫ-ЯГИ (BEM: .creature-detail) =====
+.creature-detail
+  padding: 16px
+
+  &__heading
+    margin-bottom: 12px
+    font-size: 20px
+
+  &__img
+    margin-bottom: 12px
+
+  &__text
+    margin-bottom: 16px
+    line-height: 1.7
+
+  &__specs-title
+    margin-bottom: 8px
+    font-size: 15px
+
+  &__specs
+    list-style: none
+    padding-left: 8px
+    line-height: 1.8
+
+  &__spec
+    margin-bottom: 4px
+
+// ===== СТРАНИЦА ТАБЛИЦЫ =====
+.table-page
+  padding: 16px
+
+.table-filter,
+.table-sort
+  margin-bottom: 12px
+
+  summary
+    cursor: pointer
+    padding: 6px
+    font-weight: bold
+
+  &__form
+    padding: 8px 0
+
+    p
+      margin-bottom: 8px
+
+    label
+      display: inline-block
+      min-width: 180px
+
+  &__input
+    padding: 4px 6px
+
+  &__submit
+    padding: 4px 12px
+    cursor: pointer
+
+.creatures-table
+  border-collapse: collapse
+  width: 100%
+
+  th, td
+    padding: 6px 10px
+    border: 1px solid $border-mid
+
+  th
+    background-color: #f0f0f0
+    font-weight: bold
+
+// ===== АДАПТИВ: ПЛАНШЕТ (≤ 900px) =====
+@media (max-width: 900px)
+  .gallery
+    height: 200px
+    grid-template-columns: 1fr 2fr
+
+    &__right
+      grid-template-rows: 1fr 1fr
+
+      .gallery__img:nth-child(2)
+        display: none
+
+    &__bottom
+      grid-column: 1 / -1
+
+  .content
+    grid-template-columns: 1fr
+
+    &__left
+      padding-right: 0
+
+    &__right
+      border-left: none
+      border-top: 1px solid $border-light
+      padding-left: 0
+      padding-top: 12px
+      flex-direction: row
+      flex-wrap: wrap
+      gap: 12px
+
+  .sidebar-item
+    flex: 1 1 200px
+    border-bottom: none
+    border-right: 1px solid $border-faint
+    padding-bottom: 0
+    padding-right: 10px
+
+    &__inner
+      grid-template-columns: 1fr
+      grid-template-areas: "header" "text" "link" "circle"
+
+  .top-part
+    grid-template-columns: 1fr 1fr
+    grid-template-areas: "header header" "text text" "img img" "link ."
+
+    &__img
+      height: auto
+      max-height: 260px
+
+    &__text
+      grid-template-columns: 1fr 1fr
+
+// ===== АДАПТИВ: МОБИЛЬНЫЙ (≤ 600px) =====
+@media (max-width: 600px)
+  .header
+    &__nav
+      flex-direction: column
+
+      a
+        text-align: center
+
+  .gallery
+    display: flex
+    flex-direction: column
+    height: auto
+
+    &__left
+      width: 100%
+      height: 200px
+
+    &__right
+      display: flex
+      flex-direction: column
+      width: 100%
+
+      .gallery__img
+        display: block
+        width: 100%
+        height: 180px
+
+    &__bottom
+      display: flex
+      flex-direction: column
+
+      .gallery__img
+        display: block
+        width: 100%
+        height: 180px
+
+  .top-part
+    grid-template-columns: 1fr
+    grid-template-areas: "header" "text" "img" "link"
+
+    &__img
+      height: auto
+      max-height: 220px
+
+    &__text
+      grid-template-columns: 1fr
+
+  .bottom-part
+    grid-template-columns: 1fr
+    grid-template-areas: "header" "img" "text" "link"
+
+    &__img
+      max-height: 200px
+      object-fit: cover
+
+  .content
+    &__right
+      flex-direction: column
+
+  .sidebar-item
+    flex: none
+    border-right: none
+    border-bottom: 1px solid $border-faint
+    padding-right: 0
+    padding-bottom: 10px
+
+    &__inner
+      grid-template-columns: 1fr
+      grid-template-areas: "header" "text" "link" "circle"
