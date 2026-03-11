@@ -1,4 +1,3 @@
-// ===== ПЕРЕМЕННЫЕ =====
 $primary        = #42a5f5
 $border-light   = #ddd
 $border-mid     = #ccc
@@ -10,7 +9,6 @@ $font-base      = Arial, sans-serif
 $fz-base        = 14px
 $transition-img = transform 0.3s ease, filter 0.3s ease
 
-// ===== СБРОС И БАЗОВЫЕ СТИЛИ =====
 *
   box-sizing: border-box
   margin: 0
@@ -28,7 +26,6 @@ img
 a
   text-decoration: none
 
-// ===== ШАПКА (BEM: .header) =====
 .header
   &__nav
     display: flex
@@ -49,7 +46,6 @@ a
     color: #fff
     font-size: 13px
 
-// ===== ГАЛЕРЕЯ (BEM: .gallery) =====
 .gallery
   display: grid
   grid-template-columns: 1fr 2.5fr
@@ -83,7 +79,6 @@ a
       filter: brightness(1.15)
       cursor: pointer
 
-// ===== КОНТЕНТНАЯ ОБЛАСТЬ (BEM: .content) =====
 .content
   display: grid
   grid-template-columns: 3fr 1fr
@@ -102,7 +97,6 @@ a
     flex-direction: column
     gap: 12px
 
-// ===== ГЛАВНОЕ СУЩЕСТВО — ВЕРХНИЙ БЛОК (BEM: .top-part) =====
 .top-part
   display: grid
   grid-template-columns: 1fr 1fr 1fr
@@ -134,7 +128,6 @@ a
     height: 100%
     object-fit: cover
 
-// ===== ГЛАВНОЕ СУЩЕСТВО — НИЖНИЙ БЛОК (BEM: .bottom-part) =====
 .bottom-part
   border: 1px solid $border-mid
   padding: 12px
@@ -162,7 +155,6 @@ a
     grid-area: link
     place-self: end
 
-// ===== ЭЛЕМЕНТ САЙДБАРА (BEM: .sidebar-item) =====
 .sidebar-item
   padding-bottom: 10px
   border-bottom: 1px solid $border-faint
@@ -200,7 +192,6 @@ a
     height: 70px
     object-fit: cover
 
-// ===== ПОДВАЛ (BEM: .footer) =====
 .footer
   background-color: $bg-footer
   padding: 12px 16px
@@ -210,7 +201,6 @@ a
   border-top: 1px solid $border-light
   margin-top: 16px
 
-// ===== СТРАНИЦА БАБЫ-ЯГИ (BEM: .creature-detail) =====
 .creature-detail
   padding: 16px
 
@@ -237,7 +227,6 @@ a
   &__spec
     margin-bottom: 4px
 
-// ===== СТРАНИЦА ТАБЛИЦЫ =====
 .table-page
   padding: 16px
 
@@ -279,7 +268,6 @@ a
     background-color: #f0f0f0
     font-weight: bold
 
-// ===== АДАПТИВ: ПЛАНШЕТ (≤ 900px) =====
 @media (max-width: 900px)
   .gallery
     height: 200px
@@ -331,7 +319,6 @@ a
     &__text
       grid-template-columns: 1fr 1fr
 
-// ===== АДАПТИВ: МОБИЛЬНЫЙ (≤ 600px) =====
 @media (max-width: 600px)
   .header
     &__nav
