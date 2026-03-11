@@ -6,11 +6,29 @@ block pageTitle
   title= siteTitle
 
 block content
-  +gallery(galleryImages)
+  .gallery
+    .gallery__left
+      img.gallery__img(src=galleryImages[0], alt='Фото 1')
+    .gallery__right
+      img.gallery__img(src=galleryImages[1], alt='Фото 2')
+      img.gallery__img(src=galleryImages[2], alt='Фото 3')
+      .gallery__bottom
+        img.gallery__img(src=galleryImages[3], alt='Фото 4')
+        img.gallery__img(src=galleryImages[4], alt='Фото 5')
   .content
     .content__left
-      +topCreature(topCreature)
-      +bottomCreature(bottomCreature)
+      .top-part
+        .top-part__header= topCreature.name
+        .top-part__text
+          p= topCreature.textLeft
+          p= topCreature.textRight
+        a.top-part__link(href=topCreature.link) Подробнее
+        img.top-part__img(src=topCreature.img, alt=topCreature.name)
+      .bottom-part
+        .bottom-part__header= bottomCreature.name
+        img.bottom-part__img(src=bottomCreature.img, alt=bottomCreature.name)
+        p.bottom-part__text= bottomCreature.text
+        a.bottom-part__link(href=bottomCreature.link) Подробнее
     .content__right
       each creature in sidebarCreatures
         +sidebarItem(creature)
