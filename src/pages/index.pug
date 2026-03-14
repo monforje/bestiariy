@@ -23,7 +23,8 @@ block content
           p= topCreature.textLeft
           p= topCreature.textRight
         a.top-part__link(href=topCreature.link) Подробнее
-        img.top-part__img(src=topCreature.img, alt=topCreature.name)
+        a(href=topCreature.link)
+          img.top-part__img(src=topCreature.img, alt=topCreature.name)
       .bottom-part
         .bottom-part__header= bottomCreature.name
         img.bottom-part__img(src=bottomCreature.img, alt=bottomCreature.name)

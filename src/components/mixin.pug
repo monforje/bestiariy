@@ -13,6 +13,21 @@ mixin footer()
   footer.footer
     p Группа: #{group} | Разработчик: #{developer}
 
+mixin tableRow(row)
+  tr
+    each val in row
+      td= val
+
+mixin creaturesTable(head, list)
+  table.creatures-table(border='1' cellpadding='5' cellspacing='0')
+    thead
+      tr
+        each h in head
+          th= h
+    tbody
+      each c in list
+        +tableRow(Object.values(c))
+
 mixin sidebarItem(c)
   .sidebar-item(class=c.alt ? 'sidebar-item--alt' : '')
     .sidebar-item__inner

@@ -9,6 +9,10 @@ $font-base      = Arial, sans-serif
 $fz-base        = 14px
 $transition-img = transform 0.3s ease, filter 0.3s ease
 
+colorStroke(color)
+  tbody tr:nth-child(odd) td:last-child
+    background-color color
+
 *
   box-sizing border-box
   margin 0
@@ -260,6 +264,7 @@ a
 .creatures-table
   border-collapse collapse
   width 100%
+  colorStroke(#000000)
 
   th, td
     padding 6px 10px

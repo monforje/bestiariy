@@ -1,6 +1,6 @@
 extends ./template.pug
 block vars
-  - var currentPage = 'table.html'
+    - var currentPage = 'table.html'
 
 
 block pageTitle
@@ -53,19 +53,4 @@ block content
                 p
                     input.table-sort__submit(type='submit' value='Сортировать')
 
-        table.creatures-table(border='1' cellpadding='5' cellspacing='0')
-            thead
-                tr
-                    th Имя
-                    th Классификация
-                    th Место обитания
-                    th Рост, м
-                    th Уровень опасности
-            tbody
-                each c in creatures
-                    tr
-                        td= c.name
-                        td= c.classification
-                        td= c.habitat
-                        td= c.height
-                        td= c.danger
+        +creaturesTable(tableHead, creatures)
