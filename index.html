@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="trapezoid row">
+      <h1>Трапеция</h1>
+
+      <img class="trapezoid__img" src="images/trapezoid.jpg" />
+    </div>
+
+    <div class="input-data row">
+      <h1>Входные данные</h1>
+
+      <!-- С помощью основания и высоты -->
+      <div class="settings">
+        <label>Основание и высота</label>
+        <input type="radio" />
+      </div>
+
+      <!-- С помощью основания и угла между основанием и боковой стороной -->
+      <div class="settings">
+        <label>Основание и угол</label>
+        <input type="radio" />
+      </div>
+
+      <!-- Поля ввода -->
+      <div class="settings">
+        <label>Основание</label>
+        <input />
+      </div>
+
+      <div class="settings">
+        <label>Высота</label>
+        <input />
+      </div>
+
+      <div class="settings">
+        <label>Угол</label>
+        <input />
+      </div>
+    </div>
+
+    <div class="calculated-characteristics row">
+      <h1>Вычисляемые характеристики</h1>
+
+      <select class="characteristics" multiple>
+        <option value="diagonals">Диагонали</option>
+        <option value="unknown_parties">Неизвестные стороны</option>
+        <option value="perimeter">Периметр</option>
+        <option value="height">Высота от основания к боковой строне</option>
+      </select>
+    </div>
+
+    <div class="buttons row">
+      <button>Вычислить</button>
+      <button>Очистить</button>
+    </div>
+
+    <div class="errors row">
+      <div class="errors-container"></div>
+    </div>
+
+    <div class="results row">
+      <h1>Результаты</h1>
+      <p class="diagonals"></p>
+      <p class="unknown_parties"></p>
+      <p class="perimeter"></p>
+      <p class="height"></p>
+    </div>
+
+    <script type="module" src="/js/algorithm.js"></script>
+    <script type="module" src="/js/data.js"></script>
+    <script type="module" src="/js/errors.js"></script>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
