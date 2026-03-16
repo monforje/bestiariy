@@ -10,7 +10,13 @@
     <div class="trapezoid row">
       <h1>Трапеция</h1>
 
-      <img class="trapezoid__img" src="images/trapezoid.jpg" />
+      <div class="trapezoid__canvas">
+        <img class="trapezoid__img" src="images/trapezoid.jpg" />
+        <span class="trapezid__base"></span>
+        <span class="trapezid__top-base"></span>
+        <span class="trapezid__height"></span>
+        <span class="trapezid__angle"></span>
+      </div>
     </div>
 
     <div class="input-data row">
@@ -19,29 +25,45 @@
       <!-- С помощью основания и высоты -->
       <div class="settings">
         <label>Основание и высота</label>
-        <input type="radio" />
+        <input
+          id="mode-base-height"
+          type="radio"
+          name="input-mode"
+          value="base-height"
+          checked
+        />
       </div>
 
       <!-- С помощью основания и угла между основанием и боковой стороной -->
       <div class="settings">
         <label>Основание и угол</label>
-        <input type="radio" />
+        <input
+          id="mode-base-angle"
+          type="radio"
+          name="input-mode"
+          value="base-angle"
+        />
       </div>
 
       <!-- Поля ввода -->
       <div class="settings">
         <label>Основание</label>
-        <input />
+        <input id="base-input" />
+      </div>
+
+      <div class="settings">
+        <label>Верхнее основание</label>
+        <input id="top-base-input" />
       </div>
 
       <div class="settings">
         <label>Высота</label>
-        <input />
+        <input id="height-input" />
       </div>
 
       <div class="settings">
         <label>Угол</label>
-        <input />
+        <input id="angle-input" />
       </div>
     </div>
 
