@@ -1,72 +1,68 @@
-const cipherRaw = `_____ное,вс_____ойм_ноча___м_ысугт,б___змотло_о___а_зрабалс__ктнесы_ьт
-б,ооанн_вшоы__бвнож_иртчвнаи_итноьт_и_мстосн_от_жа_ьмтенбонича_,в_аыме
-задз`;
+const cipher = `_____ное,вс_____ойм_ноча___м_ысугт,б___змотло_о___а_зрабалс__ктнесы_ьтб,ооанн_вшоы__бвнож_иртчвнаи_итноьт_и_мстосн_от_жа_ьмтенбонича_,в_аымезадз`;
 
-const keys = ["TL", "TR", "BL", "BR"];
+// округляем длину строки до ближайшего квадрата
+const N = Math.ceil(cipher.length ** 0.5);
 
-// Функция для генерации базового маршрута по диагоналям матрицы
-function baseRoute(n) {
-  const route = [];
-  for (let s = 0; s <= 2 * (n - 1); s++) {
-    const iMin = Math.max(0, s - (n - 1));
-    const iMax = Math.min(n - 1, s);
-    for (let i = iMax; i >= iMin; i--) {
-      route.push([i, s - i]);
-    }
+console.log(`Длина строки: ${N}`);
+
+// создаем матрицу N x N и заполняем ее символами
+let matrix = [];
+
+let index = 0;
+
+for (let i = 0; i < N; i++) {
+  matrix[i] = [];
+
+  for (let j = 0; j < N; j++) {
+    matrix[i][j] = cipher[index];
+    index++;
   }
-  return route;
 }
 
+let keys = ["TL", "TR", "BL", "BR"];
+
+let baseRoute = (n) => {
+  // n - размер матрицы
+  // идем по диагоналям: сумма i + j постоянна
+  // (0,0)
+  // (0,1) (1,0)
+  // (0,2) (1,1) (2,0)
+  // ...
+  const path = [];
+  // проход от 0 до 2*(n-1) - это количество диагоналей в матрице n x n
+  for (let sum = 0; sum <= 2 * (n - 1); sum++) {
+    // rowStart и rowEnd - это границы строк на диагонали
+    const rowStart = Math.max(0, sum - (n - 1));
+    const rowEnd = Math.min(n - 1, sum);
+
+    for (let i = rowEnd; i >= rowStart; i--) {
+      // i - строка, j - столбец
+      const j = sum - i;
+      path.push([i, j]);
+    }
+  }
+  // получаем [[0,0], [0,1], [1,0], [0,2], [1,1], [2,0], ...]
+  return path;
+};
+
 // Функция для зеркального отображения координат в зависимости от ключа
-function mirror([r, c], key, n) {
+let mirror = ([r, c], key, n) => {
   if (key === "TL") return [r, c];
   if (key === "TR") return [r, n - 1 - c];
   if (key === "BL") return [n - 1 - r, c];
   return [n - 1 - r, n - 1 - c];
-}
+};
 
-// Функция для декодирования текста по заданному ключу
-function decode(key, n, matrix) {
+let decode = (key, n, matrix) => {
   let out = "";
   for (const p of baseRoute(n)) {
     const [r, c] = mirror(p, key, n);
     out += matrix[r][c];
   }
   return out.replace(/_+$/g, "").replace(/_/g, " ");
+};
+
+for (const key of keys) {
+  console.log("\nКлюч: " + key);
+  console.log(decode(key, N, matrix));
 }
-
-function main() {
-  // Удаляем все пробельные символы из шифртекста
-  const cipher = cipherRaw.replace(/\s+/g, "");
-
-  // Вычисляем размер матрицы n x n
-  const n = Math.ceil(Math.sqrt(cipher.length));
-
-  // Проверяем, что длина шифртекста является квадратом n*n
-  if (n * n !== cipher.length) {
-    return
-  }
-
-  // Заполняем матрицу символами из шифртекста
-  const matrix = [];
-  [...cipher].forEach((char, i) => {
-    const row = Math.floor(i / n);
-    const col = i % n;
-
-    if (!matrix[row]) {
-      matrix[row] = [];
-      for (let j = 0; j < n; j++) {
-        matrix[row].push("_");
-      }
-    }
-    matrix[row][col] = char;
-  });
-
-  // Декодируем и выводим результат для каждого ключа
-  for (const key of keys) {
-    console.log(`\nКлюч ${key}:`);
-    console.log(decode(key, n, matrix));
-  }
-}
-
-main();
